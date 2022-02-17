@@ -2,19 +2,25 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
+    // theme: ThemeData(fontFamily: 'Roboto'),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Привет 4 курс",
+          appBar: AppBar(
+            title: const Text(
+              "Привет 4 курс",
+              style: TextStyle(fontSize: 32),
+            ),
           ),
-        ),
-        body: Align(
-          alignment: Alignment(0.3, -0.5),
-          child: Text(
-            'Скорее бы вернуться в универ',
-            style: TextStyle(
-                fontSize: 42, fontWeight: FontWeight.bold, color: Colors.black),
-          ),
-        ),
-      )));
+          body: Stack(
+            alignment: Alignment.center,
+            children: [
+              Image(
+                image: AssetImage('assets/images/fox.jpg'),
+                width: 400,
+              ),
+              Text(
+                'Hello!',
+                style: TextStyle(fontSize: 30, fontFamily: 'Roboto', color: Colors.blue),
+              )
+            ],
+          ))));
 }
